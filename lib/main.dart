@@ -5,6 +5,9 @@
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
 import './quizz.dart';
+import './camera.dart';
+import './gallery.dart';
+import './weather.dart';
 
 void main() =>
     runApp(MaterialApp(title: 'Don\'t disturb app', home: HomePage()));
@@ -46,7 +49,11 @@ class HomePage extends StatelessWidget {
                 'Weather',
                 style: TextStyle(fontSize: 20),
               ),
-              onTap: () {},
+              onTap: () {
+                Navigator.of(context).pop();
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => Weather()));
+              },
             ),
             Divider(
               color: Colors.grey,
@@ -56,7 +63,11 @@ class HomePage extends StatelessWidget {
                 'Gallery',
                 style: TextStyle(fontSize: 20),
               ),
-              onTap: () {},
+              onTap: () {
+                Navigator.of(context).pop();
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => Gallery()));
+              },
             ),
             Divider(
               color: Colors.grey,
@@ -66,7 +77,11 @@ class HomePage extends StatelessWidget {
                 'Camera',
                 style: TextStyle(fontSize: 20),
               ),
-              onTap: () {},
+              onTap: () {
+                Navigator.of(context).pop();
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => CameraPage()));
+              },
             )
           ],
         ),
